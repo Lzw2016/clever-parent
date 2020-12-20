@@ -10,6 +10,21 @@
 
 ---
 
+### 2020-12-20 2.1.18.1.RELEASES
+
+- [bug fix]
+
+- [增强]
+    
+- [新增]
+
+- [变化]
+    - mybatis-plus 升级到 3.4.1 (原版本3.1.2)
+    - springfox-swagger2 升级到 2.10.5 (原版本2.9.2)
+    - springfox-swagger-ui 升级到 2.10.5 (原版本2.9.2)
+
+---
+
 ### 2020-11-28 2.1.18.RELEASES
 
 - [bug fix]
