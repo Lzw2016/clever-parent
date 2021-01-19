@@ -10,6 +10,17 @@
 
 ---
 
+### 2020-12-20 2.1.18.4.RELEASES
+
+- [bug fix]
+
+- [增强]
+
+- [新增]
+  - 引入spring-boot-dependencies(2.1.18.RELEASE)
+- [变化]
+
+---
 ### 2020-12-20 2.1.18.3.RELEASES
 
 - [bug fix]
