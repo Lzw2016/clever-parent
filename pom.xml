@@ -41,11 +41,11 @@
         </repository>
         <repository>
             <id>nexus-snapshots</id>
-            <url>http://nexus.msvc.top:8081/repository/maven-snapshots/</url>
+            <url>http://nexus.msvc.top/repository/maven-snapshots/</url>
         </repository>
         <repository>
             <id>nexus-releases</id>
-            <url>http://nexus.msvc.top:8081/repository/maven-releases/</url>
+            <url>http://nexus.msvc.top/repository/maven-releases/</url>
         </repository>
     </repositories>
 
@@ -53,16 +53,16 @@
         <snapshotRepository>
             <id>nexus-snapshots</id>
             <uniqueVersion>true</uniqueVersion>
-            <url>http://nexus.msvc.top:8081/repository/maven-snapshots/</url>
+            <url>http://nexus.msvc.top/repository/maven-snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>nexus-releases</id>
-            <url>http://nexus.msvc.top:8081/repository/maven-releases/</url>
+            <url>http://nexus.msvc.top/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
     <properties>
-        <revision>2.1.18.5.RELEASE</revision>
+        <revision>2.1.18.6.RELEASE</revision>
         <downloadSources>true</downloadSources>
         <downloadJavadocs>true</downloadJavadocs>
         <java.version>1.8</java.version>
@@ -188,12 +188,12 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.72</version>
+                <version>1.2.75</version>
             </dependency>
             <dependency>
                 <groupId>com.thoughtworks.xstream</groupId>
                 <artifactId>xstream</artifactId>
-                <version>1.4.14</version>
+                <version>1.4.16</version>
             </dependency>
             <!--反射相关-->
             <dependency>
