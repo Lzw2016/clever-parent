@@ -10,6 +10,20 @@
 
 ---
 
+### 2021-04-07 2.1.18.7.RELEASE
+
+- [bug fix]
+
+- [增强]
+
+- [新增]
+
+- [变化]
+  - guava 升级
+  - easyexcel 升级
+  - fastjson 升级
+---
+
 ### 2021-03-19 2.1.18.6.RELEASES
 
 - [bug fix]
