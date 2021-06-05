@@ -22,7 +22,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.12.RELEASE</version>
+        <version>2.4.6</version>
         <relativePath/>
     </parent>
 
@@ -41,11 +41,11 @@
         </repository>
         <repository>
             <id>nexus-snapshots</id>
-            <url>http://nexus.msvc.top:8081/repository/maven-snapshots/</url>
+            <url>http://nexus.msvc.top/repository/maven-snapshots/</url>
         </repository>
         <repository>
             <id>nexus-releases</id>
-            <url>http://nexus.msvc.top:8081/repository/maven-releases/</url>
+            <url>http://nexus.msvc.top/repository/maven-releases/</url>
         </repository>
     </repositories>
 
@@ -53,16 +53,16 @@
         <snapshotRepository>
             <id>nexus-snapshots</id>
             <uniqueVersion>true</uniqueVersion>
-            <url>http://nexus.msvc.top:8081/repository/maven-snapshots/</url>
+            <url>http://nexus.msvc.top/repository/maven-snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>nexus-releases</id>
-            <url>http://nexus.msvc.top:8081/repository/maven-releases/</url>
+            <url>http://nexus.msvc.top/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
     <properties>
-        <revision>2.2.12.RELEASE</revision>
+        <revision>2.4.6.0</revision>
         <downloadSources>true</downloadSources>
         <downloadJavadocs>true</downloadJavadocs>
         <java.version>1.8</java.version>
@@ -71,12 +71,23 @@
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
-        <mybatis-plus.version>3.4.1</mybatis-plus.version>
+        <spring-boot.version>2.4.6</spring-boot.version>
+        <spring-cloud.version>2020.0.3</spring-cloud.version>
+        <jmh.version>1.32</jmh.version>
+        <mybatis-plus.version>3.4.3</mybatis-plus.version>
+        <poi.version>4.1.2</poi.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!--spring-boot-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!--spring-cloud-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -87,19 +98,14 @@
             </dependency>
             <!--performance test-->
             <dependency>
-                <groupId>com.github.houbb</groupId>
-                <artifactId>junitperf</artifactId>
-                <version>2.0.7</version>
-            </dependency>
-            <dependency>
                 <groupId>org.openjdk.jmh</groupId>
                 <artifactId>jmh-core</artifactId>
-                <version>1.26</version>
+                <version>${jmh.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.openjdk.jmh</groupId>
                 <artifactId>jmh-generator-annprocess</artifactId>
-                <version>1.26</version>
+                <version>${jmh.version}</version>
             </dependency>
             <!--swagger2-->
             <dependency>
@@ -137,7 +143,7 @@
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>2.8.0</version>
+                <version>2.9.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -158,7 +164,7 @@
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp</artifactId>
-                <version>4.9.0</version>
+                <version>4.9.1</version>
             </dependency>
             <dependency>
                 <groupId>com.squareup.retrofit2</groupId>
@@ -169,23 +175,23 @@
             <dependency>
                 <groupId>org.json</groupId>
                 <artifactId>json</artifactId>
-                <version>20201115</version>
+                <version>20210307</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.75</version>
+                <version>1.2.76</version>
             </dependency>
             <dependency>
                 <groupId>com.thoughtworks.xstream</groupId>
                 <artifactId>xstream</artifactId>
-                <version>1.4.14</version>
+                <version>1.4.17</version>
             </dependency>
             <!--反射相关-->
             <dependency>
                 <groupId>net.jodah</groupId>
                 <artifactId>typetools</artifactId>
-                <version>0.6.2</version>
+                <version>0.6.3</version>
             </dependency>
             <dependency>
                 <groupId>cglib</groupId>
@@ -217,12 +223,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>30.0-jre</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>easyexcel</artifactId>
-                <version>2.2.7</version>
+                <version>30.1.1-jre</version>
             </dependency>
             <dependency>
                 <groupId>com.google.zxing</groupId>
@@ -239,10 +240,26 @@
                 <artifactId>UserAgentUtils</artifactId>
                 <version>1.21</version>
             </dependency>
+            <!--excel读写-->
             <dependency>
-                <groupId>net.sf.dozer</groupId>
-                <artifactId>dozer</artifactId>
-                <version>5.5.1</version>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>2.2.10</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml-schemas</artifactId>
+                <version>${poi.version}</version>
             </dependency>
             <!--mybatis-->
             <dependency>
@@ -277,11 +294,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.houbb</groupId>
-            <artifactId>junitperf</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
