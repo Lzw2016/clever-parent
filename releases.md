@@ -10,6 +10,20 @@
 
 ---
 
+### 2021-07-24 2.4.9.0
+
+- [bug fix]
+
+- [增强]
+    
+- [新增]
+
+- [变化]
+  - spring-boot-starter-parent 升级到 2.4.9
+  - spring-boot-dependencies 升级到 2.4.9
+
+---
+
 ### 2021-06-13 2.4.7.0
 
 - [bug fix]
